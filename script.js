@@ -203,3 +203,13 @@ if (rotator && currentEl && nextEl) {
   setRotatorWidth(heroWords[0]);
   setTimeout(cycleWord, holdDuration);
 }
+
+// ── Dynamic Tab Title ──
+const originalTitle = document.title;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    document.title = "Come Back!";
+  } else {
+    document.title = originalTitle;
+  }
+});
